@@ -1,99 +1,94 @@
 <style media="screen">
-img {
-  border: 2px solid black;
-}
+
 span {
   text-transform: uppercase;
-}
-ul {
-  list-style-type: none;
 }
 .sidebar-nav {
   margin-left: 1em;
 }
 .user-container {
-  padding: 10px;
+  padding: 1em;
   background-color: #f3f3f3;
+  margin-bottom: 2.5em;
+}
+.img-gravatar {
+  min-height: 4em;
+  width: 100%;
+  border: 2px solid black;
+}
+.table {
+  width: 75%;
 }
 </style>
 
 <div id="sidebar-wrapper">
   <div class="sidebar-nav">
 
-    <div class="user-container">
-
+    <section class="user-container">
       <div class="row user-info">
         <div class="col-md-3">
-          <img class="img-responsive img-gravatar" src="images/browse.jpg"></img>
+          <img class="img-gravatar" src="images/browse.jpg"></img>
         </div>
         <div class="col-md-9 user-details">
           <div>
-            <span>Amina Yamusah</span> | Bloc
+            <h3><span>Amina Yamusah</span> | Bloc</h3>
           </div>
           <a href="#">Manage profile</a>
         </div>
       </div>
       <br>
       <div class="user-goals">
-        <span>My Goals</span>
-        <ol>
-          <li></li>
-          <li></li>
-          <li></li>
-        </ol>
+        <h4><span class="glyphicon glyphicon-list"></span> <span>Goals</span></h4>
+        <ul>
+          <li>goal 1</li>
+          <li>goal 2</li>
+          <li>goal 3</li>
+        </ul>
       </div>
 
-    </div>
+    </section>
 
-    <div class="filter">
-      <h3><span>Filter</span></h3>
+    <section class="filter">
+      <h3><span class="glyphicon glyphicon-filter"></span> <span>Filter</span></h3>
+
       <div class="table-responsive">
         <table class="table">
           <tr>
             <td>
+              <span class="glyphicon glyphicon-unchecked"></span>
               <span>Shares & Asks</span>
             </td>
+          </tr>
+          <tr>
             <td>
-              <span class="glyphicon glyphicon-unchecked"></span>
+              <span class="glyphicon glyphicon-unchecked"></span>  <span>Jobs</span>
             </td>
           </tr>
           <tr>
             <td>
-              <span>Jobs</span>
-            </td>
-            <td>
               <span class="glyphicon glyphicon-unchecked"></span>
-            </td>
-          </tr>
-          <tr>
-            <td>
               <span>Events</span>
             </td>
-            <td>
-              <span class="glyphicon glyphicon-unchecked"></span>
-            </td>
           </tr>
           <tr>
             <td>
-              <span>Resources</span>
-            </td>
-            <td>
               <span class="glyphicon glyphicon-unchecked"></span>
+              <span>Resources</span>
             </td>
           </tr>
         </table>
 
       </div>
-    </div>
+    </section>
 
-    <div class="history">
-      <h3><span>Recent History</span></h3>
+    <section class="history">
+      <h3><span class="glyphicon glyphicon-time"></span> <span>Recent History</span></h3>
       <ul>
         <li>Community Engagement @ Uncommon Good | App Started</li>
         <li>"Plugs at NAACP?" | New Shares</li>
         <li>Tech openings at Netflix? | Liked</li>
       </ul>
-    </div>
+    </section>
 
   </div>
 </div>
