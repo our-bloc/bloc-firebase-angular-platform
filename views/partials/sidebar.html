@@ -2,29 +2,26 @@
 
 span {
   text-transform: uppercase;
+  font-weight: bolder;
 }
 .sidebar-nav {
   margin-left: 1em;
 }
-.user-container {
-  padding: 1em;
+.jumbotron .user-container {
   background-color: #f3f3f3;
-  margin-bottom: 2.5em;
 }
 .img-gravatar {
   min-height: 4em;
   width: 100%;
-  border: 2px solid black;
+  border: 4px solid black;
 }
-.table {
-  width: 75%;
-}
+
 </style>
 
 <div id="sidebar-wrapper">
   <div class="sidebar-nav">
 
-    <section class="user-container">
+    <section class="jumbotron user-container">
       <div class="row user-info">
         <div class="col-md-3">
           <img class="img-gravatar" src="images/browse.jpg"></img>
@@ -39,18 +36,31 @@ span {
       <br>
       <div class="user-goals">
         <h4><span class="glyphicon glyphicon-list"></span> <span>Goals</span></h4>
-        <ul>
-          <li>goal 1</li>
-          <li>goal 2</li>
-          <li>goal 3</li>
-        </ul>
+        <div class="table-responsive">
+          <table class="table">
+            <tr>
+              <td>
+                <p>◦</p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>◦</p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>◦</p>
+              </td>
+            </tr>
+          </table>
+        </div>
       </div>
 
     </section>
 
-    <section class="filter">
+    <section class="jumbotron filter">
       <h3><span class="glyphicon glyphicon-filter"></span> <span>Filter</span></h3>
-
       <div class="table-responsive">
         <table class="table">
           <tr>
@@ -77,18 +87,116 @@ span {
             </td>
           </tr>
         </table>
-
       </div>
     </section>
 
-    <section class="history">
+    <section class="jumbotron history">
       <h3><span class="glyphicon glyphicon-time"></span> <span>Recent History</span></h3>
-      <ul>
-        <li>Community Engagement @ Uncommon Good | App Started</li>
-        <li>"Plugs at NAACP?" | New Shares</li>
-        <li>Tech openings at Netflix? | Liked</li>
-      </ul>
+      <div class="table-responsive">
+        <table class="table">
+          <tr>
+            <td>
+              <p>Community Engagement @ Uncommon Good | App Started</p>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p>"Plugs at NAACP?" | New Shares</p>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p>Tech openings at Netflix? | Liked</p>
+            </td>
+          </tr>
+        </table>
+      </div>
     </section>
 
   </div>
 </div>
+
+<!-- Angular template code -->
+<!-- TODO: Use user profile as point of refence for angular directives -->
+<!-- <div id="sidebar-wrapper">
+  <div class="sidebar-nav">
+
+    <section class="jumbotron user-container">
+      <div class="row user-info">
+        <div class="col-md-3">
+          <img ng-src="{{currentUser.profile.gravatar}}" class="img-gravatar"></img>
+        </div>
+        <div class="col-md-9 user-details">
+          <div> -->
+            <!-- TODO: Determine which identifier will replace "school" below -->
+            <!-- <h3><span>{{currentUser.profile.name}}</span> | {{currentUser.profile.school}}</h3>
+          </div> -->
+          <!-- TODO: Check on the user profile route name -->
+          <!-- <a ng-href="#/profile/{{user.$uid}}">Manage profile</a>
+        </div>
+      </div>
+      <br>
+      <div class="user-goals">
+        <h4><span class="glyphicon glyphicon-list"></span> <span>Goals</span></h4>
+        <div class="table-responsive">
+          <table class="table">
+            <tr ng-repeat="goal in userProfile">
+              <td>
+                <p>◦ {{goal.title}}</p>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+
+    </section>
+
+    <section class="jumbotron filter">
+      <h3><span class="glyphicon glyphicon-filter"></span> <span>Filter</span></h3>
+      <div class="table-responsive">
+        <table class="table">
+          <tr>
+            <td>
+              <span class="glyphicon glyphicon-unchecked"></span>
+              <span>Shares & Asks</span>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <span class="glyphicon glyphicon-unchecked"></span>  <span>Jobs</span>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <span class="glyphicon glyphicon-unchecked"></span>
+              <span>Events</span>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <span class="glyphicon glyphicon-unchecked"></span>
+              <span>Resources</span>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </section>
+
+    <section class="jumbotron history">
+      <h3><span class="glyphicon glyphicon-time"></span> <span>Recent History</span></h3>
+      <div class="table-responsive">
+        <table class="table">
+          <tr ng-repeat="action in userHistory">
+            <td>
+              <p>{{ action.title }} | {{ action.category }}</p>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </section>
+
+  </div>
+</div> -->
+
+<!-- profile -->
+<!-- <div ng-include="'views/profile.html'"></div> -->
