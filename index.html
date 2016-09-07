@@ -43,7 +43,27 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.2.1/js/material.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.2.1/js/ripples.js"></script>
+    <!-- facebook js sdk -->
+    <script>
+        $(document).ready(function() {
+            $.material.init();
+            window.fbAsyncInit = function() {
+              FB.init({
+                appId      : '1602015966765984',
+                xfbml      : true,
+                version    : 'v2.7'
+              });
+            };
 
+            (function(d, s, id){
+               var js, fjs = d.getElementsByTagName(s)[0];
+               if (d.getElementById(id)) {return;}
+               js = d.createElement(s); js.id = id;
+               js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.7&appId=1602015966765984";
+               fjs.parentNode.insertBefore(js, fjs);
+             }(document, 'script', 'facebook-jssdk'));
+        });
+    </script>
     <script>
         $(document).ready(function() {
             $.material.init();
