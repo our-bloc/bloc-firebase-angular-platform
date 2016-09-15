@@ -1,7 +1,7 @@
 'use strict';
 
 app.factory('Auth', function(FURL, $firebaseAuth, $firebase) {
-	
+
 	var ref = new Firebase(FURL);
 	var auth = $firebaseAuth(ref);
 
@@ -45,7 +45,7 @@ app.factory('Auth', function(FURL, $firebaseAuth, $firebase) {
       auth.$unauth();
     },
 
-		changePassword: function(user) {      
+		changePassword: function(user) {
 			return auth.$changePassword({email: user.email, oldPassword: user.oldPass, newPassword: user.newPass});
 		},
 
@@ -59,9 +59,9 @@ app.factory('Auth', function(FURL, $firebaseAuth, $firebase) {
 	};
 
 	auth.$onAuth(function(authData) {
-		if(authData) {      
+		if(authData) {
       angular.copy(authData, Auth.user);
-      Auth.user.profile = $firebase(ref.child('profile').child(authData.uid)).$asObject();			
+      Auth.user.profile = $firebase(ref.child('profile').child(authData.uid)).$asObject();
 		} else {
       if(Auth.user && Auth.user.profile) {
         Auth.user.profile.$destroy();
@@ -299,6 +299,6 @@ app.factory('Auth', function(FURL, $firebaseAuth, $firebase) {
       return 'https://www.gravatar.com/avatar/' + MD5(email) + '.jpg?d=identicon';
     }
 
-	return Auth;	
+	return Auth;
 
 });
